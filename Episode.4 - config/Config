@@ -1,0 +1,40 @@
+package me.spigot.config;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Config extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        saveDefaultConfig();
+
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Player player = (Player) sender;
+
+        if(command.getName().equalsIgnoreCase("read")){
+
+            player.sendMessage("ค่าที่อ่านได้จาก : " + args[0] + " = " + getConfig().get("Line.Line9.Line10"));
+
+
+        }
+        else if(command.getName().equalsIgnoreCase("write")){
+            int x = Integer.parseInt(args[1]);
+            getConfig().set(args[0],x);
+            saveConfig();
+
+            player.sendMessage("ค่าที่บันทึกใน : " + args[0] + " = " + getConfig().get(args[1]));
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onDisable() {
+
+    }
