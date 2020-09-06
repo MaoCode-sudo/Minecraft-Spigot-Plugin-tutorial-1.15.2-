@@ -1,0 +1,11 @@
+name: Armorstand
+version: ${project.version}
+main: me.maocode.armorstand.Armorstand
+api-version: 1.15
+commands:
+  create:
+    usage: /<command>
+    description: for create armorstand
+  read:
+    usage: /<command>
+    description: for read armorstand
