@@ -1,0 +1,13 @@
+name: Config
+version: ${project.version}
+main: me.spigot.config.Config
+api-version: 1.15
+authors: [ZahnEins]
+description: plug and play
+commands:
+  read:
+    usage: /<command>
+    description: Read config
+  write:
+    usage: /<command>
+    description: Write config
