@@ -1,0 +1,14 @@
+name: Spawnparticle
+version: ${project.version}
+main: me.maocode.spawnparticle.Spawnparticle
+api-version: 1.15
+commands:
+  close:
+    usage: /<command>
+    description: close particle
+  start:
+    usage: /<command>
+    description: start particle
+  clound:
+    usage: /<command>
+    description: create clound
