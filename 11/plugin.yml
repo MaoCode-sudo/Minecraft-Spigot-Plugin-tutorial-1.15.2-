@@ -1,0 +1,9 @@
+name: Itemstack
+version: ${project.version}
+main: me.maocode.itemstack.Itemstack
+api-version: 1.15
+authors: [maocode]
+commands:
+  item:
+    usage: /<command>
+    description: create item
