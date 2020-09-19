@@ -1,0 +1,40 @@
+package me.zahneins.gui;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Gui extends JavaPlugin implements Listener {
+
+    @Override
+    public void onEnable() {
+
+        getServer().getPluginManager().registerEvents(this,this);
+
+    }
+
+    @Override
+    public void onDisable() {
+
+    }
+
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event){
+
+        Player player = event.getPlayer();
+        Inventory inventory = Bukkit.createInventory(null,9, ChatColor.GREEN + "Test : " + player.getName());
+        ItemStack stack = new ItemStack(Material.DIAMOND,5);
+        inventory.setItem(0,stack);
+        player.openInventory(inventory);
+
+    }
+
+
+
+}
